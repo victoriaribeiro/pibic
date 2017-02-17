@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:drawable/screen_background_dark_transparent"
+    android:id="@+id/minhaview"
+    tools:showIn="@layout/activity_main">
+    <ImageButton
+        android:id="@+id/botaoLista"
+        android:src="@drawable/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:onClick="procurarLista"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/botaoMensagem"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="false" />
+    <ImageButton
+        android:id="@+id/botaoMensagem"
+        android:src="@drawable/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:onClick="procurarRecados"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/botaoSchool"
+        android:layout_toStartOf="@+id/botaoSchool"
+        android:layout_marginRight="14dp" />
+    <ImageButton
+        android:id="@+id/botaoSchool"
+        android:src="@drawable/school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:layout_alignBottom="@+id/botaoMensagem"
+        android:layout_alignTop="@+id/botaoMensagem"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:onClick="procurarMaterial" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Recados"
+        android:id="@+id/textView"
+        android:textColor="#000000"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
+        android:layout_above="@+id/botaoLista"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Material"
+        android:id="@+id/textView2"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:textColor="#000000"
+        android:layout_alignBottom="@+id/botaoSchool"
+        android:layout_toRightOf="@+id/botaoLista"
+        android:layout_toEndOf="@+id/botaoLista" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Listas de exercício"
+        android:id="@+id/textView3"
+        android:textColor="#000000"
+        android:layout_alignBottom="@+id/botaoLista"
+        android:layout_alignRight="@+id/botaoLista"
+        android:layout_alignEnd="@+id/botaoLista"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="78dp"
+        android:id="@+id/textView4" />
+
+</RelativeLayout>
