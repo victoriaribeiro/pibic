@@ -28,11 +28,11 @@
         android:layout_below="@+id/progressBar"/>
 
     <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Medium Text"
+
         android:id="@+id/textViewNome"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:textSize="1sp" />
 </RelativeLayout>

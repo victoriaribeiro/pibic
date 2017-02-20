@@ -42,7 +42,7 @@ public class RecadoHttp {
         NetworkInfo info = cm.getActiveNetworkInfo();
         String ip = Utils.getIPAddress(true);
         TextView textViewNome = (TextView) view.findViewById(R.id.textViewNome);
-        if(ip.contains("172.20.")){
+        if(ip.contains("192.168.")){
             recadoUrlJson = URL +"pesquisaPreCalc.json";
             textViewNome.setText("Pré Cálculo");
         }

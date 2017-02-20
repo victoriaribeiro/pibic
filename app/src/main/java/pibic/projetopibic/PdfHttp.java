@@ -3,6 +3,7 @@ package pibic.projetopibic;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PdfHttp {
+public class PdfHttp  {
     public static String URL = "http://e-computacao.com.br/app/";
     public static String PDF_URL_JSON = "http://e-computacao.com.br/app/";
 
@@ -40,9 +41,12 @@ public class PdfHttp {
         NetworkInfo info = cm.getActiveNetworkInfo();
         String ip = Utils.getIPAddress(true);
         TextView textViewNome = (TextView) view.findViewById(R.id.textViewNome);
-        if(ip.contains("172.20.")){
+
+
+        if(ip.contains("192.168.")){
             PDF_URL_JSON = URL + "pesquisaPdfPreCalc.json";
             textViewNome.setText("Pré Cálculo");
+
         }
         else{
             PDF_URL_JSON = URL + "pesquisaPdfGA.json";

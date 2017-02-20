@@ -3,6 +3,7 @@ package pibic.projetopibic;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,11 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class PdfListFragment extends InternetFragment{
     PdfTask mTask;
@@ -36,7 +40,7 @@ public class PdfListFragment extends InternetFragment{
         mProgressBar = (ProgressBar)layout.findViewById(R.id.progressBar);
         mListView = (ListView)layout.findViewById(R.id.list);
         mListView.setEmptyView(mTextNome);
-                return layout;
+        return layout;
     }
 
     @Override
@@ -51,6 +55,7 @@ public class PdfListFragment extends InternetFragment{
 
         if (mTask == null) {
             if (PdfHttp.temConexao(getActivity(),getView())) {
+
                 iniciarDownload();
             } else {
                 mTextNome.setText("Sem conexão");
@@ -69,11 +74,16 @@ public class PdfListFragment extends InternetFragment{
     }
 
     public void iniciarDownload() {
+        TextView textViewNome = (TextView) getView().findViewById(R.id.textViewNome);
+        MainActivity activity = (MainActivity) getActivity();
+        activity.changeToolbarTitle((String)textViewNome.getText());
+        textViewNome.setText("");
         if (mTask == null ||  mTask.getStatus() != AsyncTask.Status.RUNNING) {
             mTask = new PdfTask();
             mTask.execute();
         }
     }
+
 
     class PdfTask extends AsyncTask<Void, Void, List<UrlPdf>> {
 

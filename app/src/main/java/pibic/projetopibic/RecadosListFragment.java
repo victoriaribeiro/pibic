@@ -20,6 +20,8 @@ public class RecadosListFragment extends InternetFragment{
     ProgressBar mProgressBar;
     ListViewAdapterRecado mAdapter;
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,7 @@ public class RecadosListFragment extends InternetFragment{
         mProgressBar = (ProgressBar)layout.findViewById(R.id.progressBar);
         mListView = (ListView)layout.findViewById(R.id.list);
         mListView.setEmptyView(mTextMensagem);
+
         return layout;
     }
 
@@ -49,6 +52,7 @@ public class RecadosListFragment extends InternetFragment{
 
         if (mTask == null) {
             if (RecadoHttp.temConexao(getActivity(),getView())) {
+
                 iniciarDownload();
             } else {
                 mTextMensagem.setText("Sem conexão");
@@ -57,6 +61,14 @@ public class RecadosListFragment extends InternetFragment{
             exibirProgress(true);
         }
     }
+
+//    public void updateToolbar(){
+//        String ip = Utils.getIPAddress(true);
+//        if(ip.contains("192.168")){
+//            PdfHttp.PDF_URL_JSON = PdfHttp.URL + "pesquisaPdfPreCalc.json";
+//            getActivity().getSupportActionBar().setTitle("Pré calculo");
+//        }
+//    }
 
     private void exibirProgress(boolean exibir) {
         if (exibir) {
@@ -67,6 +79,10 @@ public class RecadosListFragment extends InternetFragment{
     }
 
     public void iniciarDownload() {
+        TextView textViewNome = (TextView) getView().findViewById(R.id.textViewNome);
+        MainActivity activity = (MainActivity) getActivity();
+        activity.changeToolbarTitle((String)textViewNome.getText());
+        textViewNome.setText("");
         if (mTask == null ||  mTask.getStatus() != AsyncTask.Status.RUNNING) {
             mTask = new RecadosTask();
             mTask.execute();
