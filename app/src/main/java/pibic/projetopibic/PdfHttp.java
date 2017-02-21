@@ -49,8 +49,8 @@ public class PdfHttp  {
 
         }
         else{
-            PDF_URL_JSON = URL + "pesquisaPdfGA.json";
-            textViewNome.setText("Geometria Analítica");
+            PDF_URL_JSON = URL + "pesquisaPdfICC.json";
+            textViewNome.setText("ICC");
         }
         return (info != null && info.isConnected());
     }

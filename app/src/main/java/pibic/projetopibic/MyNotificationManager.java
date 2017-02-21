@@ -88,6 +88,7 @@ public class MyNotificationManager {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapFactory.decodeResource(mCtx.getResources(), R.mipmap.ic_launcher))
                 .setContentText(message)
+                .setPriority(Notification.PRIORITY_MAX)
                 .build();
 
         notification.flags |= Notification.FLAG_AUTO_CANCEL;

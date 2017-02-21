@@ -6,11 +6,7 @@ import java.io.Serializable;
 public class recado implements Serializable {
     public String mensagem;
     public String data;
-    
 
-
-    public recado() {
-    }
 
     public recado(String mensagem, String data) {
         this.mensagem = mensagem;

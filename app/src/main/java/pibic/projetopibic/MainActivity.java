@@ -1,6 +1,8 @@
 package pibic.projetopibic;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setTitle("Início");
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -90,19 +93,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             transaction.replace(R.id.content_main, frag);
             transaction.commit();
         } else if (id == R.id.nav_material) {
-            PdfHttp.URL =" http://e-computacao.com.br/app/";
+            PdfHttp.URL ="http://e-computacao.com.br/app/";
             Fragment frag = new PdfListFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_main, frag);
             transaction.commit();
 
         } else if (id == R.id.nav_lista) {
-            PdfHttp.URL =" http://e-computacao.com.br/app/lista";
+            PdfHttp.URL ="http://e-computacao.com.br/app/lista";
             Fragment frag = new PdfListFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_main, frag);
             transaction.commit();
 //
+        }
+        else if(id == R.id.nav_about){
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

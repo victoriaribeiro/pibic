@@ -47,8 +47,8 @@ public class RecadoHttp {
             textViewNome.setText("Pré Cálculo");
         }
         else{
-            recadoUrlJson = URL + "pesquisaGA.json";
-            textViewNome.setText("Geometria Analítica");
+            recadoUrlJson = URL + "pesquisaICC.json";
+            textViewNome.setText("ICC");
         }
         return (info != null && info.isConnected());
     }
